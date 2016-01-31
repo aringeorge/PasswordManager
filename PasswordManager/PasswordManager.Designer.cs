@@ -148,6 +148,7 @@
          this.editInitializationVectorToolStripMenuItem.Name = "editInitializationVectorToolStripMenuItem";
          this.editInitializationVectorToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
          this.editInitializationVectorToolStripMenuItem.Text = "Edit Initialization Vector";
+         this.editInitializationVectorToolStripMenuItem.Click += new System.EventHandler(this.editInitializationVectorToolStripMenuItem_Click);
          // 
          // aboutToolStripMenuItem
          // 

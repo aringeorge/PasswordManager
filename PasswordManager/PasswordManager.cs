@@ -193,7 +193,34 @@ namespace PasswordManager
 
       private void modifyPasswordToolStripMenuItem_Click(object sender, EventArgs e)
       {
+         if (mCurrentPasswordList == null)
+         {
+            MessageBox.Show("Open or create a new or existing list before trying to modifying its password.", "Error Modifying Password");
+            return;
+         }
+         PasswordUpdate update = new PasswordUpdate();
+         update.CurrentPassword = mCurrentPasswordList.FilePassword;
+         DialogResult result = update.ShowDialog();
+         if (result == DialogResult.OK)
+         {
+            mCurrentPasswordList.FilePassword = update.NewPassword;
+         }
+      }
 
+      private void editInitializationVectorToolStripMenuItem_Click(object sender, EventArgs e)
+      {
+         if (mCurrentPasswordList == null)
+         {
+            MessageBox.Show("Open or create a new or existing list before trying to modifying its initialization vector.", "Error Modifying Initialization Vector");
+            return;
+         }
+         InitializationVectorUpdate update = new InitializationVectorUpdate();
+         update.CurrentPassword = mCurrentPasswordList.FilePassword;
+         DialogResult result = update.ShowDialog();
+         if (result == DialogResult.OK)
+         {
+            mCurrentPasswordList.FileInitializationVector = update.NewInitializationVector;
+         }
       }
    }
 }
