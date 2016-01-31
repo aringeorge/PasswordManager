@@ -190,5 +190,10 @@ namespace PasswordManager
             helper.WriteToFileNew(dlgSaveAsPasswordFile.FileName, mCurrentPasswordList);
          }
       }
+
+      private void modifyPasswordToolStripMenuItem_Click(object sender, EventArgs e)
+      {
+
+      }
    }
 }
